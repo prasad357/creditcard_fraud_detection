@@ -34,7 +34,7 @@ if st.button('Predict'):
     amount_log = np.log1p(amount)
 
     # Prepare the feature array for prediction
-    features = np.array([amount_log,time v1, v2,v3,v4,v5,v6,v7,v8,v9,10])  # Add V3, V4, ..., V28
+    features = np.array([amount_log,time, v1, v2,v3,v4,v5,v6,v7,v8,v9,10])  # Add V3, V4, ..., V28
 
     # Reshape the features to match the model input shape
     features = features.reshape(1, -1)
