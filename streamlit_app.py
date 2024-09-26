@@ -2,6 +2,7 @@
 import streamlit as st
 import numpy as np
 import joblib
+import pandas as pd
 
 # Load the trained Random Forest model
 model = joblib.load('credit_fraud_rf_model.pkl')  # Replace with the correct path
