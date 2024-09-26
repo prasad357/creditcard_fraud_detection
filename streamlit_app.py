@@ -53,13 +53,13 @@ if st.button('Predict'):
     amount_log = np.log1p(amount)
 
     # Prepare the feature array for prediction
-    features = np.array([[time, v1, v2,v3,v4,v5,v6,v7,v8,v9,v10,v11, v12,v13,v14,v15,v16,v17,v18,v19,v20,v21, v22,v23,v24,v25,v26,v27,v28,amount_log]])  # Add V3, V4, ..., V28
+    features = np.array([time, v1, v2,v3,v4,v5,v6,v7,v8,v9,v10,v11, v12,v13,v14,v15,v16,v17,v18,v19,v20,v21, v22,v23,v24,v25,v26,v27,v28,amount_log])  # Add V3, V4, ..., V28
 
     # Reshape the features to match the model input shape
     features = features.reshape(1, -1)
     df = pd.DataFrame(data=features[1:,1:])
     # Make a prediction
-    prediction = model.predict(df)
+    prediction = model.predict(features)
 
     # Display result
     result = 'Fraudulent Transaction' if prediction[0] == 1 else 'Legitimate Transaction'
