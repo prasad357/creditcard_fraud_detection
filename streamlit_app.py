@@ -56,9 +56,9 @@ if st.button('Predict'):
 
     # Reshape the features to match the model input shape
     features = features.reshape(1, -1)
-
+    df = pd.DataFrame(data=features[1:,1:])
     # Make a prediction
-    prediction = model.predict(features)
+    prediction = model.predict(df)
 
     # Display result
     result = 'Fraudulent Transaction' if prediction[0] == 1 else 'Legitimate Transaction'
